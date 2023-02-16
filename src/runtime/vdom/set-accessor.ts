@@ -99,6 +99,8 @@ export const setAccessor = (
       }
       if (newValue) {
         plt.ael(elm, memberName, newValue, false);
+        // Add the member so later we can remove it
+        (elm as any)['__hndlr__' + memberName] = newValue;
       }
     } else if (BUILD.vdomPropOrAttr) {
       // Set property if it exists and it's not a SVG

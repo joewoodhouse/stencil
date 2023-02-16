@@ -93,5 +93,9 @@ export const installDevTools = () => {
       }
       return result;
     };
+
+    stencil.getHostRef = (ref: any) => {
+      return getHostRef(ref);
+    };
   }
 };
